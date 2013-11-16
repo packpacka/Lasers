@@ -64,6 +64,7 @@
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Move.cs" />
+    <Compile Include="Situation.cs" />
     <Compile Include="SolutionThree.cs" />
     <Compile Include="Square.cs" />
     <Compile Include="Program.cs" />

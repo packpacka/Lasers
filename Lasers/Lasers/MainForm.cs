@@ -836,5 +836,41 @@ namespace Lasers
             logForm.FillLogForm("PartialPathInfo.txt");
         }
 
+        private void buttonUniCost_Click(object sender, EventArgs e)
+        {
+            SetMirrors();
+            SetHoles();
+            SetGoals();
+
+
+            LaserGameSolver solver = new LaserGameSolver(_Game);
+            solver.MaxAlowableDepth = (int)numericUpDownMaxDepth.Value;
+
+            solver.UniformCostSolve();
+
+            WriteLog(solver.Info, "UniCostInfo.txt");
+
+            //создаем форму сведений о выполнении 
+            FormLog logForm = new FormLog();
+            logForm.Show();
+            //и заносим туда данные
+            logForm.FillLogForm("UniCostInfo.txt");
+
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < solver.Task.Mirrors.Count; i++)
+            {
+                dataGridView1.Rows.Add(solver.Task.Mirrors[i].Left, solver.Task.Mirrors[i].Top);
+            }
+        }
+
+        private void buttonUniCostInfo_Click(object sender, EventArgs e)
+        {
+            //создаем форму сведений о выполнении 
+            FormLog logForm = new FormLog();
+            logForm.Show();
+            //и заносим туда данные
+            logForm.FillLogForm("UniCostInfo.txt");
+        }
+
     }
 }

@@ -79,6 +79,8 @@
             this.buttonPartialPath = new System.Windows.Forms.Button();
             this.numericUpDownLocaDepth = new System.Windows.Forms.NumericUpDown();
             this.label11 = new System.Windows.Forms.Label();
+            this.buttonUniCostInfo = new System.Windows.Forms.Button();
+            this.buttonUniCost = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownWidhField)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownHeightField)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -591,7 +593,7 @@
             // 
             // buttonPartialPathInfo
             // 
-            this.buttonPartialPathInfo.Location = new System.Drawing.Point(654, 227);
+            this.buttonPartialPathInfo.Location = new System.Drawing.Point(657, 280);
             this.buttonPartialPathInfo.Name = "buttonPartialPathInfo";
             this.buttonPartialPathInfo.Size = new System.Drawing.Size(99, 42);
             this.buttonPartialPathInfo.TabIndex = 36;
@@ -601,7 +603,7 @@
             // 
             // buttonPartialPath
             // 
-            this.buttonPartialPath.Location = new System.Drawing.Point(489, 227);
+            this.buttonPartialPath.Location = new System.Drawing.Point(492, 280);
             this.buttonPartialPath.Name = "buttonPartialPath";
             this.buttonPartialPath.Size = new System.Drawing.Size(143, 42);
             this.buttonPartialPath.TabIndex = 35;
@@ -611,7 +613,7 @@
             // 
             // numericUpDownLocaDepth
             // 
-            this.numericUpDownLocaDepth.Location = new System.Drawing.Point(654, 275);
+            this.numericUpDownLocaDepth.Location = new System.Drawing.Point(657, 328);
             this.numericUpDownLocaDepth.Maximum = new decimal(new int[] {
             195,
             0,
@@ -629,17 +631,39 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(489, 276);
+            this.label11.Location = new System.Drawing.Point(492, 329);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(159, 17);
             this.label11.TabIndex = 38;
             this.label11.Text = "Локальное углубление";
+            // 
+            // buttonUniCostInfo
+            // 
+            this.buttonUniCostInfo.Location = new System.Drawing.Point(657, 224);
+            this.buttonUniCostInfo.Name = "buttonUniCostInfo";
+            this.buttonUniCostInfo.Size = new System.Drawing.Size(99, 42);
+            this.buttonUniCostInfo.TabIndex = 40;
+            this.buttonUniCostInfo.Text = "Результаты";
+            this.buttonUniCostInfo.UseVisualStyleBackColor = true;
+            this.buttonUniCostInfo.Click += new System.EventHandler(this.buttonUniCostInfo_Click);
+            // 
+            // buttonUniCost
+            // 
+            this.buttonUniCost.Location = new System.Drawing.Point(492, 224);
+            this.buttonUniCost.Name = "buttonUniCost";
+            this.buttonUniCost.Size = new System.Drawing.Size(143, 42);
+            this.buttonUniCost.TabIndex = 39;
+            this.buttonUniCost.Text = "Стратегия равных цен";
+            this.buttonUniCost.UseVisualStyleBackColor = true;
+            this.buttonUniCost.Click += new System.EventHandler(this.buttonUniCost_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(877, 588);
+            this.Controls.Add(this.buttonUniCostInfo);
+            this.Controls.Add(this.buttonUniCost);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.numericUpDownLocaDepth);
             this.Controls.Add(this.buttonPartialPathInfo);
@@ -739,6 +763,8 @@
         private System.Windows.Forms.Button buttonPartialPath;
         private System.Windows.Forms.NumericUpDown numericUpDownLocaDepth;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button buttonUniCostInfo;
+        private System.Windows.Forms.Button buttonUniCost;
     }
 }
 

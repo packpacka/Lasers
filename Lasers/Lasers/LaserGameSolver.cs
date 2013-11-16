@@ -260,6 +260,42 @@ namespace Lasers
             
             return rating;
         }
+
+        /// <summary>
+        /// Определение существования указанной ситуации
+        /// </summary>
+        /// <param name="parSolutionThree">вершина дерева решиня с проверяемой ситуацией</param>
+        /// <returns></returns>
+        public override bool IsExistsSituation(List<Situation> parSituations, SolutionThree parSolutionThree)
+        {
+            bool isExist = false;
+
+            List<Square> mirrors =  parSolutionThree.Move.Mirrors;
+
+            foreach(Situation situation in parSituations)
+            {
+                int mirrorsOnPlace = 0;
+
+                foreach (Square mirror in mirrors)
+                {
+                    foreach (Point cell in situation.OcceupedCells)
+                    {
+                        if ((mirror.Left == cell.X) && (mirror.Top == cell.Y))
+                        {
+                            mirrorsOnPlace++;
+                        }
+                    }
+                }
+
+                if (mirrorsOnPlace == situation.OcceupedCells.Count)
+                {
+                    isExist = true;
+                    return isExist; 
+                }
+            }
+           
+            return isExist;
+        }
         
         /// <summary>
         /// Совершение хода
